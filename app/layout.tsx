@@ -4,7 +4,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { CartProvider } from "./context/CartContext";
 
-const inter = Inter ({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,11 +26,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-   return (
-    <html lang="en">
+  return (
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body className={inter.className}>
         <CartProvider>{children}</CartProvider>
       </body>
     </html>
   );
 }
+
